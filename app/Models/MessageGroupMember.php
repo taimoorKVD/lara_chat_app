@@ -4,11 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UserMessage extends Model
+class MessageGroupMember extends Model
 {
-    public function message() {
-        return $this->belongsTo(Message::class);
-    }
+    protected $fiilable = ['user_id', 'message_group_id', 'status'];
 
     public function message_group() {
         return $this->belongsTo(MessageGroup::class);

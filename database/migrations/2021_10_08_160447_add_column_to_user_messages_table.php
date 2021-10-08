@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMessageGroupTable extends Migration
+class AddColumnToUserMessagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateMessageGroupTable extends Migration
      */
     public function up()
     {
-        Schema::create('message_group', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->unsignedInteger('user_id')->comment('creater of the group.');
-            $table->timestamps();
+        Schema::table('user_messages', function (Blueprint $table) {
+            $table->unsignedInteger('message_group_id')->nullable()->after('message_id');
         });
     }
 
@@ -28,6 +25,8 @@ class CreateMessageGroupTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('message_group');
+        Schema::table('user_messages', function (Blueprint $table) {
+            //
+        });
     }
 }

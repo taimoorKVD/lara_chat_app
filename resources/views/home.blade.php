@@ -8,7 +8,7 @@
             <div class="col-md-3">
                 <div class="users">
                     <h5>Users</h5>
-                    <ul class="list-group list-chat-item">
+                    <ul class="list-group list-chat-item" style="margin-top: -5px;">
                         @if($users->count() > 0)
                         @foreach($users as $user)
                         <li class="list-group-item chat-user-list">

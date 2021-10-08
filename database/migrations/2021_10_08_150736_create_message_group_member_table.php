@@ -15,6 +15,9 @@ class CreateMessageGroupMemberTable extends Migration
     {
         Schema::create('message_group_member', function (Blueprint $table) {
             $table->id();
+            $table->unsignedInteger('message_group_id');
+            $table->unsignedInteger('user_id');
+            $table->integer('status');
             $table->timestamps();
         });
     }

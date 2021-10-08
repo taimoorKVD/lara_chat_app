@@ -21,6 +21,9 @@
     <!-- Socket.io -->
     <script src="https://cdn.socket.io/4.2.0/socket.io.min.js"></script>
 
+    <!-- Select 2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -33,6 +36,9 @@
     
     <!-- Custom Styles -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
+    <!-- Select 2 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"/>
 </head>
 <body>
     <div id="app">

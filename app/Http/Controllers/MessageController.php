@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class MessageController extends Controller
 {
     public function conversation($userId) {
-        $users = User::where('id', '!=', auth()->user()->id)->orderBy('created_at', 'DESC')->get();
+        $users = User::where('id', '!=', auth()->user()->id)->orderBy('created_at', 'DESC')->paginate(10);
         $friendInfo = User::findOrFail($userId);
         $myInfo = User::findOrFail(auth()->user()->id);
 
