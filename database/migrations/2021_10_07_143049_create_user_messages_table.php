@@ -17,7 +17,7 @@ class CreateUserMessagesTable extends Migration
             $table->id();
             $table->foreignId('message_id')->constrained()->onDelete('cascade');
             $table->unsignedInteger('sender_id');
-            $table->unsignedInteger('receiver_id');
+            $table->unsignedInteger('receiver_id')->nullable();
             $table->tinyInteger('type')->default(0)->comment('1:group_message, 0:personal_message');
             $table->tinyInteger('seen_status')->default(0)->comment('1:seen');
             $table->tinyInteger('delivery_status')->default(0)->comment('1:delivered');

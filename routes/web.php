@@ -19,7 +19,11 @@ Route::get('/', function () {
 
 Route::prefix('chat-app')->group(function() {
     Auth::routes();
-    Route::get('/home', 'HomeController@index')->name('home');
-    Route::get('/conversation/{userId}', 'MessageController@conversation')->name('message.conversation');
-    Route::post('send-message', 'MessageController@sendMessage')->name('message.sendMessage');
+    Route::middleware(['auth'])->group(function () {
+        Route::get('/home', 'HomeController@index')->name('home');
+        Route::get('/conversation/{userId}', 'MessageController@conversation')->name('message.conversation');
+        Route::post('send-message', 'MessageController@sendMessage')->name('message.sendMessage');
+        Route::post('send-group-message', 'MessageController@sendGroupMessage')->name('message.sendGroupMessage');
+        Route::resource('message-group', 'MessageGroupController');
+    });
 });
